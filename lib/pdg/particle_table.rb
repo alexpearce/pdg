@@ -46,7 +46,7 @@ module PDG
 
     # Adds a row with the corresponding properties to the table
     def add_row(particle_properties)
-      particle = self[particle_properties[:id]]
+      particle = self[particle_properties[:id].to_i]
       if particle.nil?
         self << Particle.new(particle_properties)
       else
