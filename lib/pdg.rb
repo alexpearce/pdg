@@ -25,7 +25,7 @@ module PDG
     end
 
     def pretty_print(objs, properties)
-      Hirb::Helpers::AutoTable.render objs, {:fields => properties, :unicode => true}
+      Hirb::Helpers::AutoTable.render objs, {:fields => properties}
     end
   end
 end
