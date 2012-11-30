@@ -96,3 +96,10 @@ Contributions
 -------------
 
 This gem is very much in its infancy. If there are features you would like to see, or incorrect implementations that need fixing, do [submit an issue](https://github.com/alexpearce/pdg/issues) or email me.
+
+Other
+-----
+
+[ISC licensed](https://github.com/alexpearce/pdg/blob/master/LICENSE)
+
+[![Build Status](https://secure.travis-ci.org/alexpearce/pdg.png?branch=master)](https://travis-ci.org/alexpearce/pdg)
