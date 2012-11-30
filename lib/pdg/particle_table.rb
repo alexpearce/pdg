@@ -1,9 +1,8 @@
 require "pdg/particle.rb"
 
 module PDG
-  class ParticleTable
+  class ParticleTable < Hash
     def initialize(path)
-      @particles = Hash.new
 
       source = File.new path, "r"
 
@@ -56,19 +55,17 @@ module PDG
       end
     end
 
-    # Convenience method
     def [](id)
-      @particles[id.to_i]
+      if id.class == Range or id.class == Array
+        self.values_at(*id).compact
+      else
+        self.values_at(id).first
+      end
     end
 
     # Appends a new particle to the `particles` hash
     def <<(particle)
-      @particles[particle.id] = particle
-    end
-
-    # Iterate over the values of the hash
-    def each(&block)
-      @particles.each_value(&block)
+      self[particle.id] = particle
     end
 
     def to_s
@@ -77,6 +74,6 @@ module PDG
 
     protected :<<, :parse_line, :add_row
 
-    private
+    protected :<<, :parse_line, :add_row
   end
 end
