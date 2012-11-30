@@ -27,5 +27,16 @@ module PDG
     def pretty_print(objs, properties)
       Hirb::Helpers::AutoTable.render objs, {:fields => properties}
     end
+
+    # Ruby 1.8:
+    # "Hello"[0] => 72
+    # Ruby 1.9:
+    # "Hello"[0] => "H"
+    # assuming non-multibyte strings.
+    # This functions returns the ASCII representation of the `idx`th byte of the string
+    def single_character(str, idx = 0)
+      substr = str[idx]
+      substr.class == Fixnum ? substr.chr : substr
+    end
   end
 end

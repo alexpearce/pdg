@@ -1,6 +1,13 @@
 require "test/unit"
 require "pdg"
 
+# Monkey patch Float to include a 1.8/1.9 compatible rounding method
+class Float
+  def round(order)
+    ("%.#{order}f" % self).to_f
+  end
+end
+
 # We test particles with and without widths,
 # and with fractional and integer charges.
 class TestPDG < Test::Unit::TestCase

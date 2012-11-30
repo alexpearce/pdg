@@ -74,7 +74,7 @@ module PDG
     # fraction_to_float("-2/3") => -0.666...
     def fraction_to_float(fraction)
       return 0.0 if fraction == "0"
-      sign = fraction[0] == "+" ? 1.0 : -1.0
+      sign = PDG::single_character(fraction) == "+" ? 1.0 : -1.0
       sign * Rational(*(fraction[1..-1].split("/").map(&:to_i))).to_f
     end
   end

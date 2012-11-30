@@ -7,7 +7,7 @@ module PDG
       source = File.new path, "r"
 
       while (line = source.gets)
-        line_type = line[0]
+        line_type = PDG::single_character(line)
 
         case line_type
         # Comment lines begin with a *
