@@ -23,7 +23,7 @@ module PDG
                     -2.0
                   # Either 0 or something like -1/3, +2/3
                   else
-                    fraction_to_float(properties[:charge])
+                    fraction_to_float properties[:charge]
                   end
       # The mass and width keys may not be present, but never fear as:
       # nil.to_f => 0.0

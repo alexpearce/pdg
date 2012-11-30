@@ -8,12 +8,12 @@ module PDG
   # "C" is a little short for a variable name...
   SPEED_OF_LIGHT = 2.9979246E-01
   # Path to PDG MC table
-  DEFAULT_DATA = File.expand_path("../pdg/mass_width_2012.mcd", __FILE__)
+  DEFAULT_DATA = File.expand_path "../pdg/mass_width_2012.mcd", __FILE__
 
   class << self
     # Returns a ParticleTable object
     def particles(path = DEFAULT_DATA)
-      @@particles ||= ParticleTable.new(path)
+      @@particles ||= ParticleTable.new path
     end
 
     # Convenience method
