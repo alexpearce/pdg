@@ -1,6 +1,8 @@
 require "pdg/particle_table"
 require "pdg/particle"
 
+require "hirb"
+
 module PDG
   # Reduced Planck's constant in GeV ps
   HBAR = 6.5821193E-13
@@ -20,6 +22,10 @@ module PDG
     # Returns the particle with `id`
     def [](id)
       particles[id]
+    end
+
+    def pretty_print(objs, properties)
+      Hirb::Helpers::AutoTable.render objs, {:fields => properties, :unicode => true}
     end
   end
 end

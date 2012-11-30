@@ -72,7 +72,11 @@ module PDG
       "<##{self.class}:#{self.object_id.to_s(8)}>"
     end
 
-    protected :<<, :parse_line, :add_row
+    # Returns a formatted table containing particle(s) with id(s) = `ids`
+    # One may specify a single integer, an Array of them, or a Range 
+    def pretty_print(id, fields = [:id, :name, :mass, :charge, :width, :lifetime])
+      PDG::pretty_print(self[id], fields)
+    end
 
     protected :<<, :parse_line, :add_row
   end
