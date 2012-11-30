@@ -75,6 +75,7 @@ class TestPDG < Test::Unit::TestCase
     assert_equal 5.65751E-14, top.mean_distance(200).round(19)
     assert_equal 0.00000E+00, proton.mean_distance(10)
     assert_equal 2.54595E-01, lambda_c.mean_distance(10).round(6)
+    assert_raise(PDG::LorentzViolation) { top.mean_distance(100) }
   end
 
   private
