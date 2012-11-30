@@ -49,7 +49,7 @@ module PDG
     def add_row(particle_properties)
       particle = self[particle_properties[:id]]
       if particle.nil?
-        self << Particle.new particle_properties
+        self << Particle.new(particle_properties)
       else
         particle.mass  = particle_properties[:mass] unless particle_properties[:mass].nil?
         particle.width = particle_properties[:width] unless particle_properties[:width].nil?
