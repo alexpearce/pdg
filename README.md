@@ -100,6 +100,6 @@ This gem is very much in its infancy. If there are features you would like to se
 Other
 -----
 
-[ISC licensed](https://github.com/alexpearce/pdg/blob/master/LICENSE)
+[ISC licensed](https://github.com/alexpearce/pdg/blob/master/LICENSE).
 
 [![Build Status](https://secure.travis-ci.org/alexpearce/pdg.png?branch=master)](https://travis-ci.org/alexpearce/pdg)
